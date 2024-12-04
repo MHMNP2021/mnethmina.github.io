@@ -17,47 +17,45 @@
             <a href="#contact">Contact</a>
         </nav>
     </header>
-    <section id="home">
-        <h2>Welcome!</h2>
-        <p>Your tagline here.</p>
-    </section>
-    <section id="about" class="fade-in">
-        <h2>About Me</h2>
-        <p>Details about yourself.</p>
-    </section>
 
-    
-    <section id="portfolio">
-        <h2>Portfolio</h2>
-        <p>Projects will go here.</p>
-        <h2>Portfolio</h2>
-        <p>Projects will go here.</p>
-    </section>
-        
-        
-   <section id="blog">
-    <h2>Blog</h2>
-    <ul>
-        {% for post in site.posts %}
-        <li>
-            <a href="{{ post.url }}">{{ post.title }}</a>
-            <p>{{ post.date | date: "%B %d, %Y" }}</p>
-        </li>
-        {% endfor %}
-    </ul>
-</section>
-        
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Contact details will go here.</p>
-    </section>
+    <main>
+        <section id="home">
+            <h2>Welcome!</h2>
+            <p>Your tagline here.</p>
+        </section>
 
+        <section id="about" class="fade-in">
+            <h2>About Me</h2>
+            <p>Details about yourself.</p>
+        </section>
 
-   
+        <section id="portfolio">
+            <h2>Portfolio</h2>
+            <p>Projects will go here.</p>
+        </section>
+
+        <section id="blog">
+            <h2>Blog</h2>
+            <ul>
+                {% for post in site.posts %}
+                <li>
+                    <a href="{{ post.url }}">{{ post.title }}</a>
+                    <p>{{ post.date | date: "%B %d, %Y" }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Contact details will go here.</p>
+        </section>
+    </main>
+
     <footer>
         <p>&copy; 2024 Your Name. All rights reserved.</p>
     </footer>
+
     <script src="script.js" defer></script>
 </body>
 </html>
-
