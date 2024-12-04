@@ -103,3 +103,14 @@ html {
     }
 }
 
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s, transform 1s;
+}
+
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
