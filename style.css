@@ -20,6 +20,9 @@ header {
     color: #fff;
     padding: 1rem 0;
     text-align: center;
+    position: sticky; /* Make header sticky */
+    top: 0;
+    z-index: 1000;
 }
 
 header nav {
@@ -36,6 +39,7 @@ header nav a {
 
 header nav a:hover {
     color: #ffeb3b;
+    text-decoration: underline;
 }
 
 /* Sections */
@@ -56,14 +60,13 @@ section h2 {
 /* Footer */
 footer {
     text-align: center;
-
-/* Hover Effects for Links */
-header nav a:hover {
-    color: #ffeb3b;
-    text-decoration: underline;
+    padding: 1rem 0;
+    background: #333;
+    color: white;
+    margin-top: 2rem;
 }
 
-/* Button Style and Hover Effect */
+/* Button Style */
 button {
     background-color: #4CAF50;
     color: white;
@@ -79,12 +82,7 @@ button:hover {
     transform: scale(1.1);
 }
 
-    padding: 1rem 0;
-    background: #333;
-    color: white;
-    margin-top: 2rem;
-}
-
+/* Smooth Scrolling */
 html {
     scroll-behavior: smooth;
 }
@@ -102,15 +100,3 @@ html {
         transform: translateY(0);
     }
 }
-
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s, transform 1s;
-}
-
-.fade-in.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
