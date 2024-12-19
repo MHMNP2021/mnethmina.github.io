@@ -2,6 +2,8 @@
 layout: post
 title: "My First Post"
 date: 2024-12-04
+categories: [Blog]
+tags: [Introduction, Portfolio]
 ---
 Welcome to my first blog post!
 
