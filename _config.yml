@@ -2,4 +2,5 @@ title: "My Portfolio"
 description: "A personal blog and portfolio."
 baseurl: "" # Keep this empty for GitHub Pages
 url: "https://mnethmina.github.io"
+url: "https://mnethmina.github.io"
 theme: minima # Simple, clean Jekyll theme
