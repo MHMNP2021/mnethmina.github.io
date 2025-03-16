@@ -1,5 +1,39 @@
-title: "My Portfolio"
-description: "A personal blog and portfolio."
-baseurl: "" # Keep this empty for GitHub Pages
-url: "https://mnethmina.github.io"
-theme: minima # Simple, clean Jekyll theme
+# Basic Site Settings
+title: Your Name - Portfolio
+description: Personal portfolio website showcasing my projects and skills
+url: https://yourusername.github.io
+author: Your Name
+
+# Theme Settings (if you want to use a GitHub Pages theme)
+# Uncomment one of these theme options if you want to use it:
+# theme: jekyll-theme-minimal
+# theme: jekyll-theme-cayman
+# theme: jekyll-theme-slate
+# theme: jekyll-theme-tactile
+# theme: jekyll-theme-midnight
+# theme: jekyll-theme-architect
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .gitignore
+  - README.md
+
+# Custom Variables (you can add any custom variables you want)
+social:
+  github: yourusername
+  linkedin: yourusername
+  twitter: yourusername
+  email: your.email@example.com
