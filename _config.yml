@@ -1,30 +1,16 @@
-# Basic Site Settings
-title: Your Name - Portfolio
-description: Personal portfolio website showcasing my projects, skills, and experience.
-url: https://yourusername.github.io
-baseurl: "" # Leave empty if your site is at the root of the domain
-author:
-  name: Your Name
-  email: your.email@example.com
-  twitter: yourusername
-  github: yourusername
-  linkedin: yourusername
+# Basic Jekyll configuration for GitHub Pages
+title: My Portfolio
+description: Personal portfolio website showcasing my projects and skills
+url: "" # Add your GitHub Pages URL when available
+baseurl: "" # Leave empty if your site is at the root of your domain
 
-# Theme Settings
-theme: jekyll-theme-minimal
-logo: /assets/img/profile-photo.jpg # Optional: Path to your logo or profile photo
-
-# Build Settings
+# Build settings
 markdown: kramdown
-permalink: pretty
-timezone: UTC # Set your timezone for proper date handling
-
-# Plugins (Ensure these are installed via Gemfile)
+remote_theme: pages-themes/minimal@v0.2.0
 plugins:
-  - jekyll-seo-tag
-  - jekyll-sitemap
+  - jekyll-remote-theme
 
-# Exclude Files from Processing
+# Exclude files from processing
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -32,19 +18,9 @@ exclude:
   - vendor
   - .gitignore
   - README.md
-  - .DS_Store # Exclude macOS system files
 
-# Custom Variables
-social:
-  github: yourusername
-  linkedin: yourusername
-  twitter: yourusername
-  email: your.email@example.com
-  instagram: yourusername # Optional: Add more social links
+# Custom variables
+author: Your Name
+email: youremail@example.com
+github_username: your-github-username
 
-# Resume Download Option
-show_downloads: true # Set to false if you don't want to offer a resume download
-resume_path: /assets/resume.pdf # Path to your resume file
-
-# Optional: Add Google Analytics
-google_analytics: UA-XXXXX-Y # Replace with your Google Analytics ID
