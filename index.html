@@ -3,40 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional portfolio of [Your Name] - Web Developer, Designer, and Creative Thinker">
+    <meta name="keywords" content="portfolio, web developer, designer, projects, skills">
     <title>Your Name - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <header id="home">
         <div class="container">
-            <h1>Your Name</h1>
-            <p>Web Developer | Designer | Creative Thinker</p>
+            <div class="header-content">
+                <h1>Your Name</h1>
+                <p class="tagline">Web Developer | Designer | Creative Thinker</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn primary-btn">View My Work</a>
+                    <a href="#contact" class="btn secondary-btn">Contact Me</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <a href="#about"><i class="fas fa-chevron-down"></i></a>
         </div>
     </header>
 
-    <nav>
+    <nav id="navbar">
         <div class="container">
-            <ul>
+            <div class="logo">
+                <a href="#home">YN</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
     <section id="about" class="section">
         <div class="container">
-            <h2>About Me</h2>
+            <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="https://via.placeholder.com/300" alt="Your Photo">
+                    <div class="image-wrapper">
+                        <img src="https://via.placeholder.com/300" alt="Your Photo">
+                    </div>
                 </div>
                 <div class="about-text">
                     <p>Hello! I'm a passionate [your profession] with a strong interest in [your interests]. I love creating [what you create] and solving problems through [your approach].</p>
                     <p>I have experience in [your experience] and I'm always eager to learn new technologies and methodologies.</p>
                     <p>When I'm not coding, you can find me [your hobbies or interests outside of work].</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <h3>2+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat">
+                            <h3>10+</h3>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat">
+                            <h3>5+</h3>
+                            <p>Happy Clients</p>
+                        </div>
+                    </div>
+                    <a href="resume.pdf" class="btn primary-btn" download>Download CV <i class="fas fa-download"></i></a>
                 </div>
             </div>
         </div>
@@ -44,33 +88,54 @@
 
     <section id="projects" class="section">
         <div class="container">
-            <h2>My Projects</h2>
+            <h2 class="section-title">My Projects</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+                <button class="filter-btn" data-filter="app">Mobile Apps</button>
+            </div>
             <div class="project-grid">
-                <div class="project-card">
-                    <img src="https://via.placeholder.com/300x200" alt="Project 1">
-                    <h3>Project 1</h3>
-                    <p>Description of your first project. What technologies did you use? What problems did you solve?</p>
-                    <div class="project-links">
-                        <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                <div class="project-card" data-category="web">
+                    <div class="project-img">
+                        <img src="https://via.placeholder.com/300x200" alt="Project 1">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">Web Development</span>
+                        <h3>Project 1</h3>
+                        <p>Description of your first project. What technologies did you use? What problems did you solve?</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank" class="btn btn-sm"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="#" target="_blank" class="btn btn-sm"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <img src="https://via.placeholder.com/300x200" alt="Project 2">
-                    <h3>Project 2</h3>
-                    <p>Description of your second project. What technologies did you use? What problems did you solve?</p>
-                    <div class="project-links">
-                        <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                <div class="project-card" data-category="design">
+                    <div class="project-img">
+                        <img src="https://via.placeholder.com/300x200" alt="Project 2">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">Design</span>
+                        <h3>Project 2</h3>
+                        <p>Description of your second project. What technologies did you use? What problems did you solve?</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank" class="btn btn-sm"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="#" target="_blank" class="btn btn-sm"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <img src="https://via.placeholder.com/300x200" alt="Project 3">
-                    <h3>Project 3</h3>
-                    <p>Description of your third project. What technologies did you use? What problems did you solve?</p>
-                    <div class="project-links">
-                        <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                <div class="project-card" data-category="app">
+                    <div class="project-img">
+                        <img src="https://via.placeholder.com/300x200" alt="Project 3">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category">Mobile App</span>
+                        <h3>Project 3</h3>
+                        <p>Description of your third project. What technologies did you use? What problems did you solve?</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank" class="btn btn-sm"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="#" target="_blank" class="btn btn-sm"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -79,61 +144,216 @@
 
     <section id="skills" class="section">
         <div class="container">
-            <h2>Skills</h2>
-            <div class="skills-grid">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-content">
                 <div class="skill-category">
                     <h3>Programming Languages</h3>
-                    <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>Python</li>
-                        <li>Java</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Frameworks & Libraries</h3>
-                    <ul>
-                        <li>React</li>
-                        <li>Bootstrap</li>
-                        <li>jQuery</li>
-                        <li>Node.js</li>
-                        <li>Express</li>
-                    </ul>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>HTML</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>CSS</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>JavaScript</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Python</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="skill-category">
                     <h3>Tools & Technologies</h3>
-                    <ul>
-                        <li>Git</li>
-                        <li>GitHub</li>
-                        <li>VS Code</li>
-                        <li>Figma</li>
-                        <li>Adobe XD</li>
-                    </ul>
+                    <div class="skill-icons">
+                        <div class="skill-icon">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                        </div>
+                        <div class="skill-icon">
+                            <i class="fab fa-node-js"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="skill-icon">
+                            <i class="fab fa-git-alt"></i>
+                            <span>Git</span>
+                        </div>
+                        <div class="skill-icon">
+                            <i class="fab fa-sass"></i>
+                            <span>Sass</span>
+                        </div>
+                        <div class="skill-icon">
+                            <i class="fab fa-figma"></i>
+                            <span>Figma</span>
+                        </div>
+                        <div class="skill-icon">
+                            <i class="fab fa-wordpress"></i>
+                            <span>WordPress</span>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Experience & Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Job Title</h3>
+                        <h4>Company Name</h4>
+                        <p class="timeline-date">Jan 2023 - Present</p>
+                        <p>Description of your responsibilities and achievements. What technologies did you use? What problems did you solve?</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Job Title</h3>
+                        <h4>Company Name</h4>
+                        <p class="timeline-date">Jan 2021 - Dec 2022</p>
+                        <p>Description of your responsibilities and achievements. What technologies did you use? What problems did you solve?</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Bachelor's Degree</h3>
+                        <h4>University Name</h4>
+                        <p class="timeline-date">2017 - 2021</p>
+                        <p>Description of your studies and achievements. What was your major? What projects did you work on?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="section">
+        <div class="container">
+            <h2 class="section-title">What People Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Working with [Your Name] was a pleasure. They delivered high-quality work on time and was always responsive to feedback."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/100" alt="Client Name">
+                        <div class="author-info">
+                            <h4>Client Name</h4>
+                            <p>Position, Company</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"[Your Name] has a great eye for design and a deep understanding of user experience. Their technical skills are top-notch."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/100" alt="Client Name">
+                        <div class="author-info">
+                            <h4>Client Name</h4>
+                            <p>Position, Company</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-nav">
+                <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <div class="testimonial-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
 
     <section id="contact" class="section">
         <div class="container">
-            <h2>Contact Me</h2>
-            <p>Feel free to reach out if you'd like to collaborate or just say hello!</p>
-            <div class="contact-methods">
-                <div class="contact-method">
-                    <i class="fas fa-envelope"></i>
-                    <h3>Email</h3>
-                    <p><a href="mailto:your.email@example.com">your.email@example.com</a></p>
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>Feel free to reach out if you'd like to collaborate or just say hello!</p>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p><a href="mailto:your.email@example.com">your.email@example.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>City, Country</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-dribbble"></i></a>
+                    </div>
                 </div>
-                <div class="contact-method">
-                    <i class="fab fa-linkedin"></i>
-                    <h3>LinkedIn</h3>
-                    <p><a href="https://linkedin.com/in/yourusername" target="_blank">linkedin.com/in/yourusername</a></p>
-                </div>
-                <div class="contact-method">
-                    <i class="fab fa-github"></i>
-                    <h3>GitHub</h3>
-                    <p><a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+                <div class="contact-form">
+                    <h3>Send Me a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -141,12 +361,32 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Your Name. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Your Name</h3>
+                    <p>Web Developer | Designer | Creative Thinker</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe to my newsletter for the latest updates</p>
+                    <form id="newsletterForm">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Your Name. All rights reserved.</p>
+                <a href="#home" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
             </div>
         </div>
     </footer>
