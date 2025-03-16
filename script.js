@@ -1,55 +1,52 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            window.scrollTo({
-                top: targetSection.offsetTop - 70,
-                behavior: 'smooth'
-            });
-        });
-    });
-    
-    // Add active class to navigation links on scroll
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const sections = document.querySelectorAll('.section');
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-links');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    const skillBars = document.querySelectorAll('.progress');
+    const animatedElements = document.querySelectorAll('.animate-fade-up, .animate-fade-in, .animate-slide-right, .animate-slide-left');
+    const testimonialSlider = document.querySelector('.testimonial-slider');
+    const testimonials = document.querySelectorAll('.testimonial');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const dots = document.querySelectorAll('.dot');
+    const contactForm = document.getElementById('contactForm');
+    const newsletterForm = document.getElementById('newsletterForm');
+
+    // Navbar scroll effect
     window.addEventListener('scroll', function() {
-        const sections = document.querySelectorAll('.section');
-        const navLinks = document.querySelectorAll('nav a');
+        if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
         
-        let currentSection = '';
+        // Add active class to nav links based on scroll position
+        let current = '';
         
         sections.forEach(section => {
             const sectionTop = section.offsetTop - 100;
             const sectionHeight = section.clientHeight;
             
-            if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
-                currentSection = '#' + section.getAttribute('id');
+            if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
             }
         });
         
         navLinks.forEach(link => {
             link.classList.remove('active');
-            if (link.getAttribute('href') === currentSection) {
+            if (link.getAttribute('href') === '#' + current) {
                 link.classList.add('active');
             }
         });
-    });
-    
-    // Add animation to project cards
-    const projectCards = document.querySelectorAll('.project-card');
-    
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
+        
+        // Animate elements on scroll
+        animatedElements.forEach(element => {
+            if (isElementInViewport(element)) {
+                element.classList.add('active');
             }
         });
-    }, { threshold: 0.2 });
-    
-    projectCards.forEach(card => {
-        observer.observe(card);
-    });
-});
