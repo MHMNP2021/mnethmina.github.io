@@ -2,90 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv = "X-UA-Compatible content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <!-- === CSS File === -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!--- === Header Start === --->
-    
     <header>
         <h1>My Portfolio</h1>
-        <div class="profile">
-            <img src="A75407 (1).jpg" alt="" width="150px">
-            <h1> M Nethmina </h1>
-            <div class="social-icons"> 
-                <a href="#"><I class="fa-brands fa-linkedin">
-            </div>
-        </div>
-
-        <!--- navBar --->
-
         <nav>
-            <ul>
-          <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
-          <li><a href="#"><i class="fa-solid fa-user"></i> About Me</a></li>
-          <li><a href="#"><i class="fa-solid fa-briefcase"></i> Portfolio</a></li>
-          <li><a href="#"><i class="fa-solid fa-blog"></i> Blog</a></li>
-          <li><a href="#"><i class="fa-solid fa-envelope"></i> Contact</a></li>                
-            </ul>
-        </nav>   
-                    
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
 
-    <!--- === Header End --->
+    <section id="about" class="fade-in">
+        <h2>About Me</h2>
+        <p>Welcome to my portfolio! I'm a passionate developer and designer.</p>
+    </section>
 
-    <main>
-        <section id="home" class="fade-in">
-            <h2>Welcome!</h2>
-            <p>Self-Mastery in Numbers: A Blend of Financial Math and Industrial Statistics</p>
-        </section>
+    <section id="projects" class="fade-in">
+        <h2>Projects</h2>
+        <p>Here are some of my projects...</p>
+    </section>
 
-        <section id="about" class="fade-in">
-            <h2>About Me</h2>
-            <p>Details about yourself.</p>
-        </section>
+    <section id="blog" class="fade-in">
+        <h2>Blog</h2>
+        <p>Check out my latest blog posts...</p>
+    </section>
 
-        <section id="portfolio" class="fade-in">
-            <h2>Portfolio</h2>
-            <p>Projects will go here.</p>
-        </section>
-        
-        
-        <section id="blog" class="fade-in">
-            <h2>Blog</h2>
-            <ul>
-               <li>
-                    <a href="{{ '/2024/12/04/my-first-post/' | relative_url }}">My first post</a>
-                    <p>December 05, 2024</p>
-                </li>              
-            </ul>
-        </section>
-
-
-
-        
-       <section id="contact" class="fade-in">
-    <h2>Contact</h2>
-    <p>
-        <a href="mailto:mhmn200021@gmail.com"><i class="fa fa-envelope"></i> mhmn200021@gmail.com</a><br>
-        <a href="tel:+94762977214"><i class="fa fa-phone"></i> +94762977214</a><br>
-        <a href="https://www.linkedin.com/in/mhm-n-perera-451284288" target="_blank"><i class="fa fa-linkedin"></i> LinkedIn</a><br>
-        <a href="https://github.com/MHMNP2021" target="_blank"><i class="fa fa-github"></i> GitHub</a>
-    </p>
-</section>
+    <section id="contact" class="fade-in">
+        <h2>Contact</h2>
+        <p>Feel free to reach out to me...</p>
+    </section>
 
     <footer>
-        <p>&copy; 2024 mhmnperera. All rights reserved.</p>
+        <p>&copy; 2023 My Portfolio. All rights reserved.</p>
     </footer>
-        
-<!-- === Main JS File === -->
-    <script src="script.js" defer></script>
-<!-- === FontAwesome JS FIle (Icon File) === --->
-    <script scr="https://kit.fontawesome.com/aa5f332820.js" crossorigin="anonymous"></script>
-        
+
+    <button id="mode-toggle">Toggle Dark Mode</button>
+
+    <script src="script.js"></script>
 </body>
 </html>
