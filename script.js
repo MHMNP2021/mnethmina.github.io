@@ -1,52 +1,55 @@
-// Smooth Scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            window.scrollTo({
+                top: targetSection.offsetTop - 70,
+                behavior: 'smooth'
+            });
         });
     });
-});
-
-// Dynamic Navigation Bar
-window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-});
-
-// Light/Dark Mode Toggle
-const modeToggle = document.getElementById('mode-toggle');
-const body = document.body;
-
-modeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    const isDarkMode = body.classList.contains('dark-mode');
-    localStorage.setItem('darkMode', isDarkMode);
-});
-
-// Check for saved user preference
-if (localStorage.getItem('darkMode') === 'true') {
-    body.classList.add('dark-mode');
-}
-
-// Scroll-Triggered Fade-In
-document.addEventListener("DOMContentLoaded", () => {
-    const fadeInElements = document.querySelectorAll(".fade-in");
-
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("active");
-                }
-            });
-        },
-        { threshold: 0.1 }
-    );
-
-    fadeInElements.forEach((el) => observer.observe(el));
+    
+    // Add active class to navigation links on scroll
+    window.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('.section');
+        const navLinks = document.querySelectorAll('nav a');
+        
+        let currentSection = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.clientHeight;
+            
+            if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                currentSection = '#' + section.getAttribute('id');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === currentSection) {
+                link.classList.add('active');
+            }
+        });
+    });
+    
+    // Add animation to project cards
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, { threshold: 0.2 });
+    
+    projectCards.forEach(card => {
+        observer.observe(card);
+    });
 });
