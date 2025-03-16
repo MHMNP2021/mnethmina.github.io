@@ -7,7 +7,7 @@ author: Your Name
 # Theme Settings (if you want to use a GitHub Pages theme)
 # Uncomment one of these theme options if you want to use it:
 # theme: jekyll-theme-minimal
-# theme: jekyll-theme-cayman
+ theme: jekyll-theme-cayman
 # theme: jekyll-theme-slate
 # theme: jekyll-theme-tactile
 # theme: jekyll-theme-midnight
