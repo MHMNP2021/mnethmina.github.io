@@ -1,24 +1,30 @@
 # Basic Site Settings
 title: Your Name - Portfolio
-description: Personal portfolio website showcasing my projects and skills
+description: Personal portfolio website showcasing my projects, skills, and experience.
 url: https://yourusername.github.io
-author: Your Name
+baseurl: "" # Leave empty if your site is at the root of the domain
+author:
+  name: Your Name
+  email: your.email@example.com
+  twitter: yourusername
+  github: yourusername
+  linkedin: yourusername
 
 # Theme Settings
 theme: jekyll-theme-minimal
-# Logo for the sidebar (optional)
-logo: /assets/img/profile-photo.jpg
+logo: /assets/img/profile-photo.jpg # Optional: Path to your logo or profile photo
 
-# Build settings
+# Build Settings
 markdown: kramdown
 permalink: pretty
+timezone: UTC # Set your timezone for proper date handling
 
-# Plugins
+# Plugins (Ensure these are installed via Gemfile)
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
-# Exclude from processing
+# Exclude Files from Processing
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -26,6 +32,7 @@ exclude:
   - vendor
   - .gitignore
   - README.md
+  - .DS_Store # Exclude macOS system files
 
 # Custom Variables
 social:
@@ -33,90 +40,11 @@ social:
   linkedin: yourusername
   twitter: yourusername
   email: your.email@example.com
+  instagram: yourusername # Optional: Add more social links
 
-# Show downloads button (set to false if you don't want to offer a resume download)
-show_downloads: true
+# Resume Download Option
+show_downloads: true # Set to false if you don't want to offer a resume download
+resume_path: /assets/resume.pdf # Path to your resume file
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# # Basic Site Settings
-# title: Your Name - Portfolio
-# description: Personal portfolio website showcasing my projects and skills
-# url: https://yourusername.github.io
-# author: Your Name
-
-# # Theme Settings (if you want to use a GitHub Pages theme)
-# # Uncomment one of these theme options if you want to use it:
-# # theme: jekyll-theme-minimal
-#  theme: jekyll-theme-cayman
-# # theme: jekyll-theme-slate
-# # theme: jekyll-theme-tactile
-# # theme: jekyll-theme-midnight
-# # theme: jekyll-theme-architect
-
-# # Build settings
-# markdown: kramdown
-# permalink: pretty
-
-# # Plugins
-# plugins:
-#   - jekyll-seo-tag
-#   - jekyll-sitemap
-
-# # Exclude from processing
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor
-#   - .gitignore
-#   - README.md
-
-# # Custom Variables (you can add any custom variables you want)
-# social:
-#   github: yourusername
-#   linkedin: yourusername
-#   twitter: yourusername
-#   email: your.email@example.com
+# Optional: Add Google Analytics
+google_analytics: UA-XXXXX-Y # Replace with your Google Analytics ID
