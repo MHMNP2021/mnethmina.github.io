@@ -1,0 +1,32 @@
+# Basic Jekyll configuration for GitHub Pages
+title: Your Name | Web Developer & Designer
+description: Professional portfolio showcasing web development projects and skills
+url: "" # Add your GitHub Pages URL when available
+baseurl: "" # Leave empty if your site is at the root of your domain
+
+# Build settings
+markdown: kramdown
+remote_theme: pages-themes/minimal@v0.2.0
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+
+# Exclude files from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .gitignore
+  - README.md
+
+# Custom variables
+author: Your Name
+email: youremail@example.com
+github_username: your-github-username
+linkedin_username: your-linkedin-username
+twitter_username: your-twitter-username
+
+# Google Analytics (optional)
+# google_analytics: UA-XXXXXXXXX-X
+
