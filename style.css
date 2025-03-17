@@ -698,7 +698,7 @@ section {
 .timeline-date {
   position: absolute;
   top: 0;
-  left: calc(50% + 80px);
+  left: calc(50% + 100px);
   background-color: var(--primary-color);
   color: white;
   padding: 5px 15px;
@@ -721,7 +721,7 @@ section {
 
 .timeline-item:nth-child(even) .timeline-date {
   left: auto;
-  right: calc(50% + 30px);
+  right: calc(50% + 60px);
 }
 
 .timeline-content h3 {
