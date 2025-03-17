@@ -4,15 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Professional portfolio showcasing web development projects and skills">
-    <meta name="keywords" content="web developer, portfolio, frontend, backend, designer">
-    <meta name="author" content="Your Name">
-    
-    <title>Your Name | Web Developer & Designer</title>
+    <title>Your Name | Web Developer</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     
-    <!-- Font Awesome -->
+    <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Google Fonts -->
@@ -20,29 +17,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
-    
-    <!-- Schema.org structured data for better SEO -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Your Name",
-      "url": "https://yourname.github.io",
-      "jobTitle": "Web Developer & Designer",
-      "sameAs": [
-        "https://github.com/yourusername",
-        "https://linkedin.com/in/yourusername",
-        "https://twitter.com/yourusername"
-      ]
-    }
-    </script>
 </head>
-<body class="dark-theme">
+<body>
     <!-- Theme Toggle -->
     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
         <i class="fas fa-sun"></i>
@@ -73,12 +51,12 @@
         <!-- Home Section -->
         <section id="home" class="hero">
             <div class="container">
-                <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+                <div class="hero-content">
                     <h1>Hi, I'm <span class="highlight">Your Name</span></h1>
                     <p class="tagline">Web Developer & Designer</p>
                     <div class="cta-buttons">
                         <a href="#projects" class="btn primary-btn">View My Work</a>
-                        <a href="resume.pdf" class="btn secondary-btn" download>Download CV</a>
+                        <a href="#" class="btn secondary-btn">Download CV</a>
                     </div>
                 </div>
             </div>
@@ -97,14 +75,14 @@
         <!-- About Section -->
         <section id="about" class="about">
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up">About Me</h2>
+                <h2 class="section-title">About Me</h2>
                 <div class="about-content">
-                    <div class="about-image" data-aos="fade-right" data-aos-delay="200">
+                    <div class="about-image">
                         <div class="profile-pic">
                             <img src="https://via.placeholder.com/300" alt="Profile Picture">
                         </div>
                     </div>
-                    <div class="about-text" data-aos="fade-left" data-aos-delay="300">
+                    <div class="about-text">
                         <p>
                             Hello! I'm a passionate web developer with a keen eye for design and a love for creating intuitive, responsive websites. With expertise in HTML, CSS, JavaScript, and various frameworks, I bring ideas to life through clean, efficient code.
                         </p>
@@ -144,10 +122,10 @@
         <!-- Projects Section -->
         <section id="projects" class="projects">
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up">My Projects</h2>
+                <h2 class="section-title">My Projects</h2>
                 
                 <!-- Project Filters -->
-                <div class="project-filters" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-filters">
                     <button class="filter-btn active" data-filter="all">All</button>
                     <button class="filter-btn" data-filter="web">Web Development</button>
                     <button class="filter-btn" data-filter="design">UI/UX Design</button>
@@ -156,9 +134,9 @@
                 
                 <div class="projects-grid">
                     <!-- Project 1 -->
-                    <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-card" data-category="web">
                         <div class="project-image">
-                            <img src="https://via.placeholder.com/600x400" alt="Project 1" loading="lazy">
+                            <img src="https://via.placeholder.com/600x400" alt="Project 1">
                             <div class="project-overlay">
                                 <div class="project-links">
                                     <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
@@ -183,9 +161,9 @@
                     </div>
                     
                     <!-- Project 2 -->
-                    <div class="project-card" data-category="design" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-card" data-category="design">
                         <div class="project-image">
-                            <img src="https://via.placeholder.com/600x400" alt="Project 2" loading="lazy">
+                            <img src="https://via.placeholder.com/600x400" alt="Project 2">
                             <div class="project-overlay">
                                 <div class="project-links">
                                     <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
@@ -210,9 +188,9 @@
                     </div>
                     
                     <!-- Project 3 -->
-                    <div class="project-card" data-category="mobile" data-aos="fade-up" data-aos-delay="500">
+                    <div class="project-card" data-category="mobile">
                         <div class="project-image">
-                            <img src="https://via.placeholder.com/600x400" alt="Project 3" loading="lazy">
+                            <img src="https://via.placeholder.com/600x400" alt="Project 3">
                             <div class="project-overlay">
                                 <div class="project-links">
                                     <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
@@ -242,11 +220,11 @@
         <!-- Skills Section -->
         <section id="skills" class="skills">
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up">My Skills</h2>
+                <h2 class="section-title">My Skills</h2>
                 
                 <div class="skills-container">
                     <!-- Frontend Skills -->
-                    <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-category">
                         <h3>Frontend</h3>
                         <div class="skill-item">
                             <span class="skill-name">HTML</span>
@@ -272,7 +250,7 @@
                     </div>
                     
                     <!-- Backend Skills -->
-                    <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-category">
                         <h3>Backend</h3>
                         <div class="skill-item">
                             <span class="skill-name">Node.js</span>
@@ -298,7 +276,7 @@
                     </div>
                     
                     <!-- Tools & Others -->
-                    <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+                    <div class="skill-category">
                         <h3>Tools & Others</h3>
                         <div class="skill-item">
                             <span class="skill-name">Git</span>
@@ -323,23 +301,17 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Skill Radar Chart -->
-                <div class="radar-chart-container" data-aos="fade-up" data-aos-delay="500">
-                    <h3>Skills Overview</h3>
-                    <canvas id="skillRadarChart"></canvas>
-                </div>
             </div>
         </section>
 
         <!-- Experience Timeline -->
         <section id="experience" class="experience">
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up">Experience & Education</h2>
+                <h2 class="section-title">Experience & Education</h2>
                 
                 <div class="timeline">
                     <!-- Timeline Item 1 -->
-                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-date">2021 - Present</div>
                         <div class="timeline-content">
@@ -350,7 +322,7 @@
                     </div>
                     
                     <!-- Timeline Item 2 -->
-                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-date">2018 - 2021</div>
                         <div class="timeline-content">
@@ -361,7 +333,7 @@
                     </div>
                     
                     <!-- Timeline Item 3 -->
-                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-date">2014 - 2018</div>
                         <div class="timeline-content">
@@ -374,78 +346,13 @@
             </div>
         </section>
 
-        <!-- Testimonials Section -->
-        <section id="testimonials" class="testimonials">
-            <div class="container">
-                <h2 class="section-title" data-aos="fade-up">What People Say</h2>
-                
-                <div class="testimonial-slider" data-aos="fade-up" data-aos-delay="200">
-                    <div class="testimonial-container">
-                        <!-- Testimonial 1 -->
-                        <div class="testimonial-card">
-                            <div class="testimonial-content">
-                                <p>"Your Name is an exceptional developer who consistently delivers high-quality work. Their attention to detail and problem-solving skills are impressive."</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="author-image">
-                                    <img src="https://via.placeholder.com/100" alt="Client Name">
-                                </div>
-                                <div class="author-info">
-                                    <h4>Client Name</h4>
-                                    <p>CEO, Company Name</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Testimonial 2 -->
-                        <div class="testimonial-card">
-                            <div class="testimonial-content">
-                                <p>"Working with Your Name was a pleasure. They understood our requirements perfectly and delivered a website that exceeded our expectations."</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="author-image">
-                                    <img src="https://via.placeholder.com/100" alt="Client Name">
-                                </div>
-                                <div class="author-info">
-                                    <h4>Client Name</h4>
-                                    <p>Marketing Director, Company Name</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Testimonial 3 -->
-                        <div class="testimonial-card">
-                            <div class="testimonial-content">
-                                <p>"I highly recommend Your Name for any web development project. Their technical expertise and communication skills made the entire process smooth and efficient."</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="author-image">
-                                    <img src="https://via.placeholder.com/100" alt="Client Name">
-                                </div>
-                                <div class="author-info">
-                                    <h4>Client Name</h4>
-                                    <p>Project Manager, Company Name</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-controls">
-                        <button class="prev-btn" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
-                        <div class="testimonial-dots"></div>
-                        <button class="next-btn" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Contact Section -->
         <section id="contact" class="contact">
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+                <h2 class="section-title">Get In Touch</h2>
                 
                 <div class="contact-content">
-                    <div class="contact-info" data-aos="fade-right" data-aos-delay="200">
+                    <div class="contact-info">
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
                             <div>
@@ -478,13 +385,10 @@
                             <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Twitter">
                                 <i class="fab fa-twitter"></i>
                             </a>
-                            <a href="https://instagram.com/yourusername" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
                         </div>
                     </div>
                     
-                    <div class="contact-form" data-aos="fade-left" data-aos-delay="300">
+                    <div class="contact-form">
                         <form id="contactForm">
                             <div class="form-group">
                                 <label for="name">Name</label>
@@ -543,23 +447,12 @@
         </div>
     </footer>
 
-    <!-- Thank you modal -->
-    <div id="thankYouModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Thank You!</h2>
-            <p>Your message has been sent successfully. I'll get back to you soon!</p>
-        </div>
-    </div>
-
     <!-- Back to top button -->
     <button id="backToTop" class="back-to-top" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
