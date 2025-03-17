@@ -698,7 +698,7 @@ section {
 .timeline-date {
   position: absolute;
   top: 0;
-  left: calc(50% + 30px);
+  left: calc(50% + 60px);
   background-color: var(--primary-color);
   color: white;
   padding: 5px 15px;
@@ -708,7 +708,7 @@ section {
 
 .timeline-content {
   position: relative;
-  width: calc(50% - 50px);
+  width: calc(50% - 80px);
   padding: 20px;
   background-color: var(--card-bg);
   border-radius: 10px;
