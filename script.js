@@ -1,4 +1,3 @@
-import { Chart } from "@/components/ui/chart"
 // Wait for DOM to fully load
 document.addEventListener("DOMContentLoaded", () => {
   // Initialize AOS animation library
@@ -7,415 +6,373 @@ document.addEventListener("DOMContentLoaded", () => {
     easing: "ease",
     once: true,
     mirror: false,
-  })
-
+  });
+  
   // Set current year in footer
-  document.getElementById("currentYear").textContent = new Date().getFullYear()
-
+  document.getElementById("currentYear").textContent = new Date().getFullYear();
+  
   // Theme Toggle
-  const themeToggle = document.getElementById("theme-toggle")
-  const body = document.body
-
+  const themeToggle = document.getElementById("theme-toggle");
+  const body = document.body;
+  
   // Check for saved theme preference
-  const savedTheme = localStorage.getItem("theme")
+  const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "light") {
-    body.classList.remove("dark-theme")
-    themeToggle.innerHTML = '<i class="fas fa-moon"></i>'
+    body.classList.remove("dark-theme");
+    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
   } else {
-    body.classList.add("dark-theme")
-    themeToggle.innerHTML = '<i class="fas fa-sun"></i>'
+    body.classList.add("dark-theme");
+    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
   }
-
+  
   // Toggle theme
-  themeToggle.addEventListener("click", () => {
+  themeToggle.addEventListener("click", function () {
     if (body.classList.contains("dark-theme")) {
-      body.classList.remove("dark-theme")
-      themeToggle.innerHTML = '<i class="fas fa-moon"></i>'
-      localStorage.setItem("theme", "light")
+      body.classList.remove("dark-theme");
+      themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+      localStorage.setItem("theme", "light");
     } else {
-      body.classList.add("dark-theme")
-      themeToggle.innerHTML = '<i class="fas fa-sun"></i>'
-      localStorage.setItem("theme", "dark")
+      body.classList.add("dark-theme");
+      themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+      localStorage.setItem("theme", "dark");
     }
-  })
-
+  });
+  
   // Mobile Navigation Toggle
-  const hamburger = document.querySelector(".hamburger")
-  const navLinks = document.querySelector(".nav-links")
-
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+  
   if (hamburger) {
     hamburger.addEventListener("click", () => {
-      hamburger.classList.toggle("active")
-      navLinks.classList.toggle("active")
-    })
+      hamburger.classList.toggle("active");
+      navLinks.classList.toggle("active");
+    });
   }
-
+  
   // Close mobile menu when clicking on a nav link
   document.querySelectorAll(".nav-links a").forEach((link) => {
     link.addEventListener("click", () => {
-      hamburger.classList.remove("active")
-      navLinks.classList.remove("active")
-    })
-  })
-
+      hamburger.classList.remove("active");
+      navLinks.classList.remove("active");
+    });
+  });
+  
   // Active navigation link based on scroll position
-  const sections = document.querySelectorAll("section")
-  const navItems = document.querySelectorAll(".nav-links a")
-
+  const sections = document.querySelectorAll("section");
+  const navItems = document.querySelectorAll(".nav-links a");
+  
   window.addEventListener("scroll", () => {
-    let current = ""
-
+    let current = "";
+    
     sections.forEach((section) => {
-      const sectionTop = section.offsetTop
-      const sectionHeight = section.clientHeight
-
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      
       if (pageYOffset >= sectionTop - 200) {
-        current = section.getAttribute("id")
+        current = section.getAttribute("id");
       }
-    })
-
+    });
+    
     navItems.forEach((item) => {
-      item.classList.remove("active")
+      item.classList.remove("active");
       if (item.getAttribute("href").substring(1) === current) {
-        item.classList.add("active")
+        item.classList.add("active");
       }
-    })
-  })
-
+    });
+  });
+  
   // Back to top button
-  const backToTopButton = document.getElementById("backToTop")
-
+  const backToTopButton = document.getElementById("backToTop");
+  
   window.addEventListener("scroll", () => {
     if (window.pageYOffset > 300) {
-      backToTopButton.classList.add("visible")
+      backToTopButton.classList.add("visible");
     } else {
-      backToTopButton.classList.remove("visible")
+      backToTopButton.classList.remove("visible");
     }
-  })
-
+  });
+  
   backToTopButton.addEventListener("click", () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
-    })
-  })
-
+    });
+  });
+  
   // Smooth scrolling for all anchor links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
-      e.preventDefault()
-
-      const targetId = this.getAttribute("href")
-      const targetElement = document.querySelector(targetId)
-
+      e.preventDefault();
+      
+      const targetId = this.getAttribute("href");
+      const targetElement = document.querySelector(targetId);
+      
       if (targetElement) {
         // Get the height of the navbar
-        const navbarHeight = document.querySelector(".navbar").offsetHeight
-
+        const navbarHeight = document.querySelector(".header").offsetHeight;
+        
         // Calculate the position to scroll to (element position - navbar height)
-        const targetPosition = targetElement.offsetTop - navbarHeight
-
+        const targetPosition = targetElement.offsetTop - navbarHeight;
+        
         window.scrollTo({
           top: targetPosition,
           behavior: "smooth",
-        })
+        });
       }
-    })
-  })
-
+    });
+  });
+  
   // Project Filtering
-  const filterButtons = document.querySelectorAll(".filter-btn")
-  const projectCards = document.querySelectorAll(".project-card")
-
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const projectCards = document.querySelectorAll(".project-card");
+  
   filterButtons.forEach((button) => {
     button.addEventListener("click", () => {
       // Remove active class from all buttons
-      filterButtons.forEach((btn) => btn.classList.remove("active"))
-
+      filterButtons.forEach((btn) => btn.classList.remove("active"));
+      
       // Add active class to clicked button
-      button.classList.add("active")
-
+      button.classList.add("active");
+      
       // Get filter value
-      const filterValue = button.getAttribute("data-filter")
-
+      const filterValue = button.getAttribute("data-filter");
+      
       // Filter projects
       projectCards.forEach((card) => {
-        if (filterValue === "all" || card.getAttribute("data-category") === filterValue) {
-          card.style.display = "block"
-
-          // Add animation
-          card.classList.add("animate__animated", "animate__fadeIn")
-          setTimeout(() => {
-            card.classList.remove("animate__animated", "animate__fadeIn")
-          }, 500)
+        if (
+          filterValue === "all" ||
+          card.getAttribute("data-category") === filterValue
+        ) {
+          card.style.display = "block";
         } else {
-          card.style.display = "none"
+          card.style.display = "none";
         }
-      })
-    })
-  })
-
-  // Project Carousel
-  const carouselContainer = document.querySelector(".carousel-container")
-  const prevBtn = document.querySelector(".prev-btn")
-  const nextBtn = document.querySelector(".next-btn")
-  const dotsContainer = document.querySelector(".carousel-dots")
-
-  if (carouselContainer && prevBtn && nextBtn && dotsContainer) {
-    const projectCards = document.querySelectorAll(".project-card")
-    let currentIndex = 0
-
-    // Create dots based on number of projects
-    projectCards.forEach((_, index) => {
-      const dot = document.createElement("div")
-      dot.classList.add("dot")
-      if (index === 0) dot.classList.add("active")
-
-      dot.addEventListener("click", () => {
-        goToSlide(index)
-      })
-
-      dotsContainer.appendChild(dot)
-    })
-
-    // Update the carousel display
-    function updateCarousel() {
-      carouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`
-
-      // Update active dot
-      document.querySelectorAll(".dot").forEach((dot, index) => {
-        if (index === currentIndex) {
-          dot.classList.add("active")
-        } else {
-          dot.classList.remove("active")
-        }
-      })
-    }
-
-    // Go to specific slide
-    function goToSlide(index) {
-      currentIndex = index
-      updateCarousel()
-    }
-
-    // Previous slide
-    prevBtn.addEventListener("click", () => {
-      currentIndex = currentIndex === 0 ? projectCards.length - 1 : currentIndex - 1
-      updateCarousel()
-    })
-
-    // Next slide
-    nextBtn.addEventListener("click", () => {
-      currentIndex = currentIndex === projectCards.length - 1 ? 0 : currentIndex + 1
-      updateCarousel()
-    })
-
-    // Auto slide (optional)
-    // setInterval(() => {
-    //     currentIndex = (currentIndex === projectCards.length - 1) ? 0 : currentIndex + 1;
-    //     updateCarousel();
-    // }, 5000);
-  }
-
+      });
+    });
+  });
+  
   // Testimonial Slider
-  const testimonialContainer = document.querySelector(".testimonial-container")
-  const testimonialCards = document.querySelectorAll(".testimonial-card")
-  const prevBtnTestimonial = document.querySelector(".testimonial-controls .prev-btn")
-  const nextBtnTestimonial = document.querySelector(".testimonial-controls .next-btn")
-  const dotsContainerTestimonial = document.querySelector(".testimonial-dots")
-
+  const testimonialContainer = document.querySelector(".testimonial-container");
+  const testimonialCards = document.querySelectorAll(".testimonial-card");
+  const prevBtnTestimonial = document.querySelector(
+    ".testimonial-controls .prev-btn"
+  );
+  const nextBtnTestimonial = document.querySelector(
+    ".testimonial-controls .next-btn"
+  );
+  const dotsContainerTestimonial = document.querySelector(".testimonial-dots");
+  
   if (testimonialContainer && testimonialCards.length > 0) {
-    let currentIndexTestimonial = 0
-
+    let currentIndexTestimonial = 0;
+    
     // Create dots based on number of testimonials
     testimonialCards.forEach((_, index) => {
-      const dot = document.createElement("div")
-      dot.classList.add("dot")
-      if (index === 0) dot.classList.add("active")
-
+      const dot = document.createElement("div");
+      dot.classList.add("dot");
+      if (index === 0) dot.classList.add("active");
+      
       dot.addEventListener("click", () => {
-        goToSlideTestimonial(index)
-      })
-
-      dotsContainerTestimonial.appendChild(dot)
-    })
-
+        goToSlideTestimonial(index);
+      });
+      
+      dotsContainerTestimonial.appendChild(dot);
+    });
+    
     // Update the testimonial slider
     function updateSliderTestimonial() {
-      testimonialContainer.style.transform = `translateX(-${currentIndexTestimonial * 100}%)`
-
+      testimonialContainer.style.transform = `translateX(-${
+        currentIndexTestimonial * 100
+      }%)`;
+      
       // Update active dot
-      document.querySelectorAll(".testimonial-dots .dot").forEach((dot, index) => {
-        if (index === currentIndexTestimonial) {
-          dot.classList.add("active")
-        } else {
-          dot.classList.remove("active")
-        }
-      })
+      document
+        .querySelectorAll(".testimonial-dots .dot")
+        .forEach((dot, index) => {
+          if (index === currentIndexTestimonial) {
+            dot.classList.add("active");
+          } else {
+            dot.classList.remove("active");
+          }
+        });
     }
-
+    
     // Go to specific slide
     function goToSlideTestimonial(index) {
-      currentIndexTestimonial = index
-      updateSliderTestimonial()
+      currentIndexTestimonial = index;
+      updateSliderTestimonial();
     }
-
+    
     // Previous slide
     prevBtnTestimonial.addEventListener("click", () => {
       currentIndexTestimonial =
-        currentIndexTestimonial === 0 ? testimonialCards.length - 1 : currentIndexTestimonial - 1
-      updateSliderTestimonial()
-    })
-
+        currentIndexTestimonial === 0
+          ? testimonialCards.length - 1
+          : currentIndexTestimonial - 1;
+      updateSliderTestimonial();
+    });
+    
     // Next slide
     nextBtnTestimonial.addEventListener("click", () => {
       currentIndexTestimonial =
-        currentIndexTestimonial === testimonialCards.length - 1 ? 0 : currentIndexTestimonial + 1
-      updateSliderTestimonial()
-    })
-
+        currentIndexTestimonial === testimonialCards.length - 1
+          ? 0
+          : currentIndexTestimonial + 1;
+      updateSliderTestimonial();
+    });
+    
     // Auto slide (optional)
     setInterval(() => {
       currentIndexTestimonial =
-        currentIndexTestimonial === testimonialCards.length - 1 ? 0 : currentIndexTestimonial + 1
-      updateSliderTestimonial()
-    }, 5000)
+        currentIndexTestimonial === testimonialCards.length - 1
+          ? 0
+          : currentIndexTestimonial + 1;
+      updateSliderTestimonial();
+    }, 5000);
   }
-
+  
   // Contact Form Validation and Submission
-  const contactForm = document.getElementById("contactForm")
-  const formMessage = document.getElementById("formMessage")
-  const thankYouModal = document.getElementById("thankYouModal")
-  const closeModal = document.querySelector(".close-modal")
-
+  const contactForm = document.getElementById("contactForm");
+  const formMessage = document.getElementById("formMessage");
+  const thankYouModal = document.getElementById("thankYouModal");
+  const closeModal = document.querySelector(".close-modal");
+  
   if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
-      e.preventDefault()
-
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      
       // Get form values
-      const name = document.getElementById("name").value.trim()
-      const email = document.getElementById("email").value.trim()
-      const subject = document.getElementById("subject").value.trim()
-      const message = document.getElementById("message").value.trim()
-
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const subject = document.getElementById("subject").value.trim();
+      const message = document.getElementById("message").value.trim();
+      
       // Basic validation
       if (name === "" || email === "" || subject === "" || message === "") {
-        showFormMessage("Please fill in all fields", "error")
-        return
+        showFormMessage("Please fill in all fields", "error");
+        return;
       }
-
+      
       // Email validation
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
-        showFormMessage("Please enter a valid email address", "error")
-        return
+        showFormMessage("Please enter a valid email address", "error");
+        return;
       }
-
+      
       // If validation passes, show success message
       // In a real application, you would send the form data to a server here
-      // using fetch API or FormData
-
+      
       // Reset form
-      contactForm.reset()
-
+      contactForm.reset();
+      
       // Show thank you modal
       if (thankYouModal) {
-        thankYouModal.style.display = "flex"
+        thankYouModal.style.display = "flex";
       }
-    })
+    });
   }
-
+  
   // Close modal when clicking the close button
   if (closeModal) {
     closeModal.addEventListener("click", () => {
-      thankYouModal.style.display = "none"
-    })
+      thankYouModal.style.display = "none";
+    });
   }
-
+  
   // Close modal when clicking outside the modal content
   window.addEventListener("click", (e) => {
     if (e.target === thankYouModal) {
-      thankYouModal.style.display = "none"
+      thankYouModal.style.display = "none";
     }
-  })
-
+  });
+  
   // Show form message
   function showFormMessage(message, type) {
     if (formMessage) {
-      formMessage.textContent = message
-      formMessage.className = "form-message"
-      formMessage.classList.add(type)
-
+      formMessage.textContent = message;
+      formMessage.className = "form-message";
+      formMessage.classList.add(type);
+      
       // Hide message after 5 seconds
       setTimeout(() => {
-        formMessage.style.display = "none"
-      }, 5000)
+        formMessage.style.display = "none";
+      }, 5000);
     }
   }
-
+  
   // Newsletter form submission
-  const newsletterForm = document.getElementById("newsletterForm")
-  const newsletterMessage = document.getElementById("newsletterMessage")
-
+  const newsletterForm = document.getElementById("newsletterForm");
+  const newsletterMessage = document.getElementById("newsletterMessage");
+  
   if (newsletterForm) {
     newsletterForm.addEventListener("submit", function (e) {
-      e.preventDefault()
-
+      e.preventDefault();
+      
       // Get email value
-      const email = this.querySelector('input[type="email"]').value.trim()
-
+      const email = this.querySelector('input[type="email"]').value.trim();
+      
       // Basic validation
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
-        showNewsletterMessage("Please enter a valid email address", "error")
-        return
+        showNewsletterMessage("Please enter a valid email address", "error");
+        return;
       }
-
+      
       // In a real application, you would send the email to a server here
-
+      
       // Reset form
-      this.reset()
-
+      this.reset();
+      
       // Show success message
-      showNewsletterMessage("Thank you for subscribing to our newsletter!", "success")
-    })
+      showNewsletterMessage(
+        "Thank you for subscribing to our newsletter!",
+        "success"
+      );
+    });
   }
-
+  
   // Show newsletter message
   function showNewsletterMessage(message, type) {
     if (newsletterMessage) {
-      newsletterMessage.textContent = message
-      newsletterMessage.className = "newsletter-message"
-      newsletterMessage.classList.add(type)
-
+      newsletterMessage.textContent = message;
+      newsletterMessage.className = "newsletter-message";
+      newsletterMessage.classList.add(type);
+      
       // Hide message after 5 seconds
       setTimeout(() => {
-        newsletterMessage.style.display = "none"
-      }, 5000)
+        newsletterMessage.style.display = "none";
+      }, 5000);
     }
   }
-
+  
   // Sticky Navigation
-  window.addEventListener("scroll", () => {
-    const header = document.querySelector(".header")
-
+  window.addEventListener("scroll", function () {
+    const header = document.querySelector(".header");
+    
     if (window.scrollY > 50) {
-      header.style.padding = "10px 0"
-      header.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.1)"
+      header.style.padding = "10px 0";
+      header.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.1)";
     } else {
-      header.style.padding = "15px 0"
-      header.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.1)"
+      header.style.padding = "15px 0";
+      header.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.1)";
     }
-  })
-
+  });
+  
   // Skills Radar Chart
-  const ctx = document.getElementById("skillRadarChart")
-
+  const ctx = document.getElementById("skillRadarChart");
+  
   if (ctx) {
     const skillRadarChart = new Chart(ctx, {
       type: "radar",
       data: {
-        labels: ["HTML/CSS", "JavaScript", "React", "Node.js", "UI/UX Design", "Database"],
+        labels: [
+          "HTML/CSS",
+          "JavaScript",
+          "React",
+          "Node.js",
+          "UI/UX Design",
+          "Database",
+        ],
         datasets: [
           {
             label: "Skills",
@@ -441,11 +398,15 @@ document.addEventListener("DOMContentLoaded", () => {
               color: "rgba(255, 255, 255, 0.1)",
             },
             pointLabels: {
-              color: getComputedStyle(document.documentElement).getPropertyValue("--text-color"),
+              color: getComputedStyle(document.documentElement).getPropertyValue(
+                "--text-color"
+              ),
             },
             ticks: {
               backdropColor: "transparent",
-              color: getComputedStyle(document.documentElement).getPropertyValue("--text-color"),
+              color: getComputedStyle(document.documentElement).getPropertyValue(
+                "--text-color"
+              ),
             },
           },
         },
@@ -455,67 +416,42 @@ document.addEventListener("DOMContentLoaded", () => {
           },
         },
       },
-    })
-
+    });
+    
     // Update chart colors when theme changes
-    themeToggle.addEventListener("click", () => {
-      const textColor = getComputedStyle(document.documentElement).getPropertyValue("--text-color")
-
-      skillRadarChart.options.scales.r.pointLabels.color = textColor
-      skillRadarChart.options.scales.r.ticks.color = textColor
-      skillRadarChart.update()
-    })
+    themeToggle.addEventListener("click", function () {
+      const textColor = getComputedStyle(
+        document.documentElement
+      ).getPropertyValue("--text-color");
+      
+      skillRadarChart.options.scales.r.pointLabels.color = textColor;
+      skillRadarChart.options.scales.r.ticks.color = textColor;
+      skillRadarChart.update();
+    });
   }
-
+  
   // Keyboard navigation
-  let currentIndexTestimonial = 0
-
-  function updateSliderTestimonial() {
-    if (!testimonialContainer) return
-    testimonialContainer.style.transform = `translateX(-${currentIndexTestimonial * 100}%)`
-
-    // Update active dot
-    document.querySelectorAll(".testimonial-dots .dot").forEach((dot, index) => {
-      if (index === currentIndexTestimonial) {
-        dot.classList.add("active")
-      } else {
-        dot.classList.remove("active")
-      }
-    })
-  }
-
-  document.addEventListener("keydown", (e) => {
+  document.addEventListener("keydown", function (e) {
     // ESC key closes modal
     if (e.key === "Escape" && thankYouModal.style.display === "flex") {
-      thankYouModal.style.display = "none"
+      thankYouModal.style.display = "none";
     }
-
+    
     // Arrow keys for testimonial navigation
     if (testimonialContainer) {
       if (e.key === "ArrowLeft") {
         currentIndexTestimonial =
-          currentIndexTestimonial === 0 ? testimonialCards.length - 1 : currentIndexTestimonial - 1
-        updateSliderTestimonial()
+          currentIndexTestimonial === 0
+            ? testimonialCards.length - 1
+            : currentIndexTestimonial - 1;
+        updateSliderTestimonial();
       } else if (e.key === "ArrowRight") {
         currentIndexTestimonial =
-          currentIndexTestimonial === testimonialCards.length - 1 ? 0 : currentIndexTestimonial + 1
-        updateSliderTestimonial()
+          currentIndexTestimonial === testimonialCards.length - 1
+            ? 0
+            : currentIndexTestimonial + 1;
+        updateSliderTestimonial();
       }
     }
-  })
-
-  // Register service worker for PWA support
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker
-        .register("service-worker.js")
-        .then((registration) => {
-          console.log("ServiceWorker registration successful")
-        })
-        .catch((error) => {
-          console.log("ServiceWorker registration failed: ", error)
-        })
-    })
-  }
-})
-
+  });
+});
