@@ -495,9 +495,9 @@ Currently, I'm researching Sri Lanka’s economy and financial markets, focusing
                 <div class="footer-section">
                     <h3>Latest Blog Posts</h3>
                     <ul>
-                        <li><a href="posts/2024-12-04-my-first-post.md">My 1st blog</a></li>
-<!--                         <li><a href="blog/post2.html">Getting Started with React Hooks</a></li>
-                        <li><a href="blog/post3.html">Responsive Design Best Practices</a></li> -->
+                        {% for post in site.posts limit:3 %}
+      <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+    {% endfor %}
                     </ul>
                 </div>
                 
