@@ -1,9 +1,8 @@
 # Basic Jekyll configuration for GitHub Pages
 title: M Nethmina Perera| Financial Analyst | Data Scientist | Researcher
 description: Passionate about financial analytics, statistical modeling, and data-driven decision-making
-url: "" # Add your GitHub Pages URL when available
-baseurl: "" # Leave empty if your site is at the root of your domain
-
+url: "https://mhmnp2021.github.io" 
+baseurl: "/mnethmina.github.io" # Since your site is in a project repository
 # Build settings
 markdown: kramdown
 remote_theme: pages-themes/minimal@v0.2.0
