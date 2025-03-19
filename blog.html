@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Blog | MHM Nethmina Perera
+title: Blog
 ---
 
 <section class="blog-listing">
@@ -9,7 +9,7 @@ title: Blog | MHM Nethmina Perera
     <div class="blog-grid">
       {% for post in site.posts %}
         <div class="blog-card">
-          <h2><a href="_posts/2024-12-04-my-first-post.md">my 1st blog</a></h2>
+          <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
           <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
           <div class="post-tags">
             {% for tag in post.tags %}
@@ -17,9 +17,10 @@ title: Blog | MHM Nethmina Perera
             {% endfor %}
           </div>
           <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-          <a href="{{ post.url }}" class="read-more">Read More</a>
+          <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
         </div>
       {% endfor %}
     </div>
   </div>
 </section>
+
