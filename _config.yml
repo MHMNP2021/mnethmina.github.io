@@ -1,8 +1,8 @@
 # Basic Jekyll configuration for GitHub Pages
 title: M Nethmina Perera| Financial Analyst | Data Scientist | Researcher
 description: Passionate about financial analytics, statistical modeling, and data-driven decision-making
-url: "" 
-baseurl: "" # Since your site is in a project repository
+url: "https://mhmnp2021.github.io" 
+baseurl: "/mnethmina.github.io" # Since your site is in a project repository
 
 # Build settings
 markdown: kramdown
