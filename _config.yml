@@ -1,7 +1,7 @@
 # Basic Jekyll configuration for GitHub Pages
 title: M Nethmina Perera| Financial Analyst | Data Scientist | Researcher
 description: Passionate about financial analytics, statistical modeling, and data-driven decision-making
-url: "https://MHMNP2021.github.io" 
+url: "https://mhmnp2021.github.io" 
 baseurl: "" # Since your site is in a project repository
 
 # Build settings
