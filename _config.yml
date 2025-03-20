@@ -1,14 +1,11 @@
 # Basic Jekyll configuration for GitHub Pages
 title: M Nethmina Perera| Financial Analyst | Data Scientist | Researcher
 description: Passionate about financial analytics, statistical modeling, and data-driven decision-making
-url: "https://github.com/MHMNP2021/mnethmina.github.io/" 
+url: "https://MHMNP2021.github.io" 
 baseurl: "" # Since your site is in a project repository
+
 # Build settings
 markdown: kramdown
-remote_theme: pages-themes/minimal@v0.2.0
-plugins:
-  - jekyll-remote-theme
-  - jekyll-seo-tag
 permalink: /blog/:title/
 
 # Collections
