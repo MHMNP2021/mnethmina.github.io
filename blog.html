@@ -21,6 +21,12 @@ title: Blog
         </div>
       {% endfor %}
     </div>
+{% if site.posts.size == 0 %}
+      <div class="no-posts">
+        <p>No blog posts found. Check back soon for new content!</p>
+      </div>
+    {% endif %}
+    
   </div>
 </section>
 
